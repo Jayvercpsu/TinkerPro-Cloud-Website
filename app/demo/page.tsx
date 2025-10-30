@@ -127,8 +127,8 @@ export default function DemoPage() {
 
       <div className="relative animate-fadeInRight order-1 lg:order-2">
         <div className="relative">
-          <div className="absolute -top-6 sm:-top-10 -right-6 sm:-right-10 w-32 sm:w-40 md:w-60 lg:w-72 h-32 sm:h-40 md:h-60 lg:h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-          <div className="absolute -bottom-6 sm:-bottom-10 -left-6 sm:-left-10 w-32 sm:w-40 md:w-60 lg:w-72 h-32 sm:h-40 md:h-60 lg:h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+          <div className="absolute -top-6 sm:-top-10 -right-6 sm:-right-10 w-32 sm:w-40 md:w-60 lg:w-72 h-32 sm:h-40 md:h-60 lg:h-72  opacity-30 animate-blob"></div>
+          <div className="absolute -bottom-6 sm:-bottom-10 -left-6 sm:-left-10 w-32 sm:w-40 md:w-60 lg:w-72 h-32 sm:h-40 md:h-60 lg:h-72  opacity-30 animate-blob animation-delay-2000"></div>
 
           <div className="p-2 sm:p-4 md:p-6 lg:p-8">
             <div className="relative z-10 transform hover:scale-105 transition-transform duration-500 max-w-4xl mx-auto">
