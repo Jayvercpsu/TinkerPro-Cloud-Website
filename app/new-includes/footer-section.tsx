@@ -92,7 +92,7 @@ export default function Footer() {
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
             <p>
-              &copy; Copyright 2025. TinkerPro Cloud POS. All rights reserved.
+              &copy; Copyright 2025. TinkerPro. All rights reserved.
             </p>
           </div>
         </div>

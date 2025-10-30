@@ -52,14 +52,10 @@ export default function CloudPOSLanding() {
 
       <main className="pt-20">
         <Home />
-
         <Features />
-
         <Pricing />
         <Clients />
-
         <Demo />
-
         <Faq />
         <Contact />
       </main>
