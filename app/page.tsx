@@ -14,7 +14,6 @@ import Modal from "./new-includes/get-demo-modal";
 
 export default function CloudPOSLanding() {
   const [showModal, setShowModal] = useState(false); 
- 
 
   useEffect(() => {
     const loadWOW = async () => {

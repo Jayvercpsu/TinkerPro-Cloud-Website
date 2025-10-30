@@ -120,7 +120,7 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
 
               {/* FORM STEP */}
               {step === "form" && (
-                <div className={`transition-all duration-700 ease-in-out text-black ${isAnimating ? 'animate-slideOutLeft' : 'animate-slideInRight'}`}>
+                <div className={`transition-all duration-700 ease-in-out text-black ${isAnimating ? 'animate-slideOutTop' : 'animate-slideInDown'}`}>
                   <div className="text-center mb-6 sm:mb-8">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 text-[#FF7D00]">
                       Get Early Access to
