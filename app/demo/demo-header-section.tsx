@@ -324,20 +324,28 @@ export default function DemoHeader() {
                   </div>
 
                   <form className="space-y-3 md:space-y-4" onSubmit={(e) => { e.preventDefault(); }}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4"> 
                       <input
                         type="text"
                         placeholder="Full Name*"
                         className="px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-300 text-sm md:text-base"
                         required
                       />
+                    
                       <input
                         type="email"
                         placeholder="Email*"
                         className="px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-300 text-sm md:text-base"
                         required
                       />
-                    </div> 
+                    
+                      <input
+                        type="text"
+                        placeholder="Subject*"
+                        className="px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-300 text-sm md:text-base sm:col-span-2"
+                        required
+                      />
+                    </div>
 
                     <textarea
                       rows={4}
