@@ -7,10 +7,12 @@ export default function Demo() {
   return (
     <>
       <section className="py-20 bg-gradient-to-r from-[#FF7D00] to-orange-600 text-white relative overflow-hidden">
+
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
+
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2
             className="text-3xl lg:text-4xl font-bold mb-6 wow fadeInDown"
@@ -76,6 +78,7 @@ export default function Demo() {
             </button>
           </div>
         </div>
+        
       </section>
        
       <Modal showModal={showModal} setShowModal={setShowModal} />

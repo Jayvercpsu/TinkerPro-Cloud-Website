@@ -88,6 +88,7 @@ export default function OurClients() {
           })()}
         </div>
       </section>
+
       <style jsx>{`
         @keyframes marquee {
           0% {
@@ -104,6 +105,7 @@ export default function OurClients() {
           animation: marquee 40s linear infinite;
         }
       `}</style>
+      
     </>
   );
 }

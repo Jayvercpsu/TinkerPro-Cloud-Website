@@ -20,8 +20,7 @@ export default function Footer() {
     <>
       <footer className="bg-gray-900 text-white py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 mb-12">
-            {/* Logo & Description */}
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 mb-12"> 
             <div
               className="space-y-4 text-center wow fadeInUp"
               data-wow-duration="1s"
@@ -55,8 +54,7 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-
-            {/* Branches Inline */}
+ 
             <div
               className="wow fadeInUp text-gray-400 mt-12"
               data-wow-duration="1s"

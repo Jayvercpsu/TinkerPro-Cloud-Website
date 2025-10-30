@@ -7,11 +7,7 @@ export default function Faq() {
   return (
     <section id="faq" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div
-          className="text-center mb-16 wow fadeInUp"
-          data-wow-duration="1s"
-          data-wow-delay="0.1s"
-        >
+        <div className="text-center mb-16 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
           <p className="text-[#FF7D00] font-semibold mb-2">
             Have Any Question?
           </p>

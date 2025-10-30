@@ -59,14 +59,12 @@ export default function DemoHeader() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled 
             ? 'bg-white/90 backdrop-blur-md shadow-lg' 
-            : 'bg-white/95 backdrop-blur-sm shadow-sm'
-        }`}
-      >
+            : 'bg-white/95 backdrop-blur-sm shadow-sm' }`} >
+
         <div className="container mx-auto px-4">
           <div className={`flex items-center justify-between transition-all duration-300 ${
-            scrolled ? 'py-3' : 'py-4'
-          }`}>
-            {/* Logo with animated glow */}
+            scrolled ? 'py-3' : 'py-4' }`}>
+ 
             <div className="relative group">
               <div className="absolute -inset-2 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
               <div className="relative flex items-center">
@@ -89,8 +87,7 @@ export default function DemoHeader() {
                 />
               </div>
             </div>
-
-            {/* Desktop Navigation */}
+ 
             <nav className="hidden md:flex items-center space-x-1">
               {navItems.map((section, index) => (
                 <button
@@ -121,8 +118,7 @@ export default function DemoHeader() {
                 </button>
               ))}
             </nav>
-
-            {/* Contact Button with gradient animation */}
+ 
             <div className="hidden md:flex items-center">
               <button
                 onClick={handleContactClick}
@@ -151,8 +147,7 @@ export default function DemoHeader() {
                 <div className="absolute inset-0 rounded-lg bg-orange-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10"></div>
               </button>
             </div>
-
-            {/* Mobile Menu Toggle with animation */}
+ 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 text-gray-700 hover:text-[#FF7D00] transition-colors duration-300 relative group"
@@ -167,8 +162,7 @@ export default function DemoHeader() {
               </div>
             </button>
           </div>
-
-          {/* Mobile Navigation with staggered animation */}
+ 
           {mobileMenuOpen && (
             <div className="md:hidden pb-4 overflow-hidden">
               <div className="space-y-1 animate-slide-down">
@@ -285,13 +279,13 @@ export default function DemoHeader() {
             animation: fadeSlideIn 0.3s ease-out;
           }
         `}</style>
+        
       </header>
 
       {/* Contact Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">
-          <div className="relative bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto animate-slideDown">
-            {/* Close Button */}
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto animate-slideDown"> 
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
@@ -300,11 +294,9 @@ export default function DemoHeader() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-
-            {/* Contact Form Content */}
+ 
             <div className="p-4 sm:p-6 md:p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                {/* Left Image */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center"> 
                 <div className="relative hidden lg:block">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-200/30 to-orange-300/30 rounded-3xl blur-2xl"></div>
                   <img
@@ -313,8 +305,7 @@ export default function DemoHeader() {
                     className="relative rounded-2xl shadow-xl w-full h-auto"
                   />
                 </div>
-
-                {/* Right Form */}
+ 
                 <div className="space-y-4 md:space-y-6">
                   <div>
                     <p className="text-[#FF7D00] font-semibold mb-2 text-sm md:text-base">Contact Us</p>

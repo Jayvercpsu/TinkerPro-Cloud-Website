@@ -276,18 +276,13 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto">
           <div
-            className="absolute inset-0 bg-black/70 backdrop-blur-md animate-fadeIn"
-            onClick={() => step === "form" && !isAnimating && handleClose()}
-          ></div>
+            className="absolute inset-0 bg-black/70 backdrop-blur-md animate-fadeIn" onClick={() => step === "form" && !isAnimating && handleClose()}></div>
 
           <div className="relative z-10 w-full max-w-sm sm:max-w-lg md:max-w-2xl animate-slideFromTop">
             <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl shadow-2xl p-6 sm:p-8 md:p-12 border border-gray-300 relative overflow-hidden">
               {/* background glow */}
               <div className="absolute -top-10 -right-10 w-32 sm:w-40 h-32 sm:h-40 bg-[#FF7D00]/20 rounded-full blur-3xl animate-pulse"></div>
-              <div
-                className="absolute bottom-0 left-0 w-40 sm:w-56 h-40 sm:h-56 bg-[#FF7D00]/10 rounded-full blur-3xl animate-pulse"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
+              <div className="absolute bottom-0 left-0 w-40 sm:w-56 h-40 sm:h-56 bg-[#FF7D00]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "0.5s" }}></div>
 
               {/* Close button */}
               {step !== "loading" && (
@@ -746,6 +741,7 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
           animation: pulse 3s ease-in-out infinite;
         }
       `}</style>
+      
     </>
   );
 }

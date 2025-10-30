@@ -10,7 +10,7 @@ import Pricing from "./include-sections/pricing";
 import Features from "./include-sections/features-section";
 import Demo from "./include-sections/demo-section";
 import Modal from "./include-sections/get-demo-modal"; 
-import OurClients from "./include-sections/clients-section";
+import OurClients from "./include-sections/our-clients-section";
 import ClientsFeedback from "./include-sections/clients-feedback";
 
 export default function CloudPOSLanding() {
@@ -43,8 +43,6 @@ export default function CloudPOSLanding() {
 
     return () => clearTimeout(timer);
   }, []);
-
- 
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">

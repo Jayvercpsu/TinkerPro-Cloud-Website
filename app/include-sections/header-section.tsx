@@ -62,13 +62,12 @@ export default function Header() {
         scrolled 
           ? 'bg-white/90 backdrop-blur-md shadow-lg' 
           : 'bg-white/95 backdrop-blur-sm shadow-sm'
-      }`}
-    >
+      }`} >
+
       <div className="container mx-auto px-4">
         <div className={`flex items-center justify-between transition-all duration-300 ${
-          scrolled ? 'py-3' : 'py-4'
-        }`}>
-          {/* Logo with animated glow */}
+          scrolled ? 'py-3' : 'py-4'}`}> 
+
           <div className="relative group">
             <div className="absolute -inset-2 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
             <div className="relative flex items-center">
@@ -91,8 +90,7 @@ export default function Header() {
               />
             </div>
           </div>
-
-          {/* Desktop Navigation */}
+ 
           <nav className="hidden md:flex items-center space-x-1">
             {navItems.map((section, index) => (
               <button
@@ -108,8 +106,7 @@ export default function Header() {
                 <span className="relative z-10">
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </span>
-                
-                {/* Animated underline */}
+                 
                 <span
                   className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 ${
                     activeSection === section
@@ -117,26 +114,21 @@ export default function Header() {
                       : "w-0 group-hover:w-full"
                   }`}
                 ></span>
-                
-                {/* Hover background effect */}
+                 
                 <span className="absolute inset-0 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
               </button>
             ))}
           </nav>
-
-          {/* Contact Button with gradient animation */}
+ 
           <div className="hidden md:flex items-center">
             <button
               onClick={() => scrollToSection("contact")}
               className="relative px-6 py-2.5 rounded-lg font-medium text-white overflow-hidden group animate-fadeInRight"
-            >
-              {/* Animated gradient background */}
+            > 
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-105"></div>
-              
-              {/* Shine effect */}
+               
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full transform"></div>
-              
-              {/* Button text */}
+               
               <span className="relative z-10 flex items-center">
                 Contact
                 <svg 
@@ -148,13 +140,11 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </span>
-              
-              {/* Glow effect */}
+               
               <div className="absolute inset-0 rounded-lg bg-orange-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10"></div>
             </button>
           </div>
-
-          {/* Mobile Menu Toggle with animation */}
+ 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 text-gray-700 hover:text-[#FF7D00] transition-colors duration-300 relative group"
@@ -169,8 +159,7 @@ export default function Header() {
             </div>
           </button>
         </div>
-
-        {/* Mobile Navigation with staggered animation */}
+ 
         {mobileMenuOpen && (
           <div className="md:hidden pb-4 overflow-hidden">
             <div className="space-y-1 animate-slide-down">
@@ -287,6 +276,7 @@ export default function Header() {
           animation: fadeSlideIn 0.3s ease-out;
         }
       `}</style>
+      
     </header>
   );
 }
