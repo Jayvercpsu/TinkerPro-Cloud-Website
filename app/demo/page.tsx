@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { BadgeCheck, Menu, Users, X } from "lucide-react";
-import Modal from "../new-includes/modal";
+import Modal from "../new-includes/get-demo-modal"; 
+import DemoHeader from "./demo-header-section";
 
 export default function DemoPage() {
   const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("demo");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -36,487 +38,434 @@ export default function DemoPage() {
   const navItems = ["home", "demo"];
 
   return (
+    <>    
     <div className="min-h-screen bg-[#f3f9fd] flex flex-col">
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled 
-            ? 'bg-white/90 backdrop-blur-md shadow-lg' 
-            : 'bg-white/95 backdrop-blur-sm shadow-sm'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full overflow-x-hidden">
+   <DemoHeader/>
 
-<div className={`flex items-center justify-between flex-wrap transition-all duration-300 ${
-  scrolled ? 'py-3' : 'py-4'
-}`}>
+<div className="flex-1 flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 mt-14 sm:mt-16 md:mt-20">
+  <div className="container mx-auto max-w-7xl">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center">
+      <div className="text-center lg:text-left animate-fadeInLeft order-2 lg:order-1 px-2 sm:px-0">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-[#FF7D00] mb-3 sm:mb-4 md:mb-6 leading-tight">
+          Get Early Access to
+          <span className="block text-gray-900 mt-1 sm:mt-2">
+            TinkerPro Cloud POS
+          </span>
+        </h1>
 
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
-              <div className="relative flex items-center">
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-700 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
+          Be one of the first to explore our cloud-based POS system for{" "}
+          <strong className="text-[#FF7D00]">
+            retail and restaurant businesses
+          </strong>
+          . Simplify your sales, track inventory, and manage operations
+          all in one platform.
+        </p>
+
+        <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-600 mb-4 sm:mb-6 md:mb-10">
+          Register now and we'll notify you once the full version
+          launches!
+        </p>
+
+        <button
+          onClick={() => setShowModal(true)}
+          className="relative px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-[#FF7D00] text-white rounded-lg sm:rounded-xl font-bold text-sm sm:text-base md:text-lg shadow-lg overflow-hidden group transition-all duration-300 hover:shadow-2xl active:scale-95 sm:hover:scale-105 animate-fadeInUp w-full sm:w-auto touch-manipulation"
+        >
+          <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+            Try FREE Demo
+          </span>
+          <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 -translate-x-full group-hover:translate-x-full"></span>
+        </button>
+
+        <div className="mt-4 sm:mt-6 md:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 md:gap-6 text-[10px] sm:text-xs md:text-sm text-gray-600">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <svg
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="whitespace-nowrap">No Credit Card Required</span>
+          </div>
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <svg
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-500 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="whitespace-nowrap">Cloud-Based System</span>
+          </div>
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <svg
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-500 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="whitespace-nowrap">Easy Setup</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative animate-fadeInRight order-1 lg:order-2">
+        <div className="relative">
+          <div className="absolute -top-6 sm:-top-10 -right-6 sm:-right-10 w-32 sm:w-40 md:w-60 lg:w-72 h-32 sm:h-40 md:h-60 lg:h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+          <div className="absolute -bottom-6 sm:-bottom-10 -left-6 sm:-left-10 w-32 sm:w-40 md:w-60 lg:w-72 h-32 sm:h-40 md:h-60 lg:h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+
+          <div className="p-2 sm:p-4 md:p-6 lg:p-8">
+            <div className="relative z-10 transform hover:scale-105 transition-transform duration-500 max-w-4xl mx-auto">
+              <div className="relative w-full h-auto">
                 <img
-                  src="/logo/tinkerpro-logo-dark.png"
-                  alt="TinkerPro Cloud POS"
-className={`h-8 sm:h-10 w-auto max-w-[160px] sm:max-w-none transition-all duration-300`}
+                  src="/images/h-removebg-preview.png"
+                  alt="TinkerPro Cloud POS System"
+                  className="w-full h-auto drop-shadow-2xl animate-slideshow"
+                />
 
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = "none";
-                    const textFallback = document.createElement("div");
-                    textFallback.className = `font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-300 ${
-                      scrolled ? 'text-xl' : 'text-2xl'
-                    }`;
-                    textFallback.textContent = "TinkerPro";
-                    target.parentNode?.appendChild(textFallback);
-                  }}
+                <img
+                  src="/images/tinkerpro.png"
+                  alt="TinkerPro Cloud POS System"
+                  className="w-full h-auto drop-shadow-2xl absolute top-0 left-0 animate-slideshow-delayed"
                 />
               </div>
             </div>
-
-            <nav className="hidden md:flex items-center space-x-1">
-              {navItems.map((section, index) => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                  className={`relative px-4 py-2 font-medium transition-all duration-300 group animate-fadeInDown ${
-                    activeSection === section
-                      ? "text-[#FF7D00]"
-                      : "text-gray-700"
-                  }`}
-                >
-                  <span className="relative z-10">
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                  </span>
-                  
-                  <span
-                    className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 ${
-                      activeSection === section
-                        ? "w-full"
-                        : "w-0 group-hover:w-full"
-                    }`}
-                  ></span>
-                  
-                  <span className="absolute inset-0 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
-                </button>
-              ))}
-            </nav>
-
-            <div className="hidden md:flex items-center">
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="relative px-6 py-2.5 rounded-lg font-medium text-white overflow-hidden group animate-fadeInRight"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-105"></div>
-                
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full transform"></div>
-                
-                <span className="relative z-10 flex items-center">
-                  Contact
-                  <svg 
-                    className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-                
-                <div className="absolute inset-0 rounded-lg bg-orange-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10"></div>
-              </button>
-            </div>
-
-<button
-  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-  className="md:hidden p-2 text-gray-700 hover:text-[#FF7D00] transition-colors duration-300 relative group z-50"
->
-
-              <div className="absolute inset-0 bg-orange-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative">
-                {mobileMenuOpen ? (
-                  <X className="w-6 h-6 animate-spin-in" />
-                ) : (
-                  <Menu className="w-6 h-6 animate-fade-in" />
-                )}
-              </div>
-            </button>
           </div>
 
-          {mobileMenuOpen && (
-            <div className="md:hidden pb-4 overflow-hidden">
-              <div className="space-y-1 animate-slide-down">
-                {navItems.map((section, index) => (
-                  <button
-                    key={section}
-                    onClick={() => scrollToSection(section)}
-                    style={{ 
-                      animationDelay: `${index * 0.05}s`,
-                      opacity: 0,
-                      animation: `fadeSlideIn 0.3s ease-out ${index * 0.05}s forwards`
-                    }}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-300 ${
-                      activeSection === section
-                        ? "text-[#FF7D00] bg-orange-50 font-semibold translate-x-2"
-                        : "text-gray-700 hover:text-[#FF7D00] hover:bg-orange-50 hover:translate-x-2"
-                    }`}
-                  >
-                    <span className="flex items-center">
-                      <span className={`w-1 h-1 rounded-full mr-3 transition-all duration-300 ${
-                        activeSection === section ? 'bg-[#FF7D00] w-2 h-2' : 'bg-gray-400'
-                      }`}></span>
-                      {section.charAt(0).toUpperCase() + section.slice(1)}
-                    </span>
-                  </button>
-                ))}
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  style={{ 
-                    animationDelay: `${navItems.length * 0.05}s`,
-                    opacity: 0,
-                    animation: `fadeSlideIn 0.3s ease-out ${navItems.length * 0.05}s forwards`
-                  }}
-                  className="block w-full px-4 py-3 rounded-lg text-white bg-gradient-to-r from-orange-500 to-orange-600 font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 mt-2"
-                >
-                  Contact Us
-                </button>
+          <div className="absolute top-2 sm:top-4 md:top-10 -left-1 sm:-left-2 md:-left-5 z-20 bg-white rounded-md sm:rounded-lg md:rounded-xl shadow-xl p-1.5 sm:p-2 md:p-4 animate-float">
+            <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <Users className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 text-white" />
               </div>
-            </div>
-          )}
-        </div>
-      </header>
-
-      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 mt-16 sm:mt-20">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-            <div className="text-center lg:text-left animate-fadeInLeft order-2 lg:order-1">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#FF7D00] mb-4 sm:mb-6 leading-tight">
-                Get Early Access to
-                <span className="block text-gray-900 mt-2">
-                  TinkerPro Cloud POS
-                </span>
-              </h1>
-
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
-                Be one of the first to explore our cloud-based POS system for{" "}
-                <strong className="text-[#FF7D00]">
-                  retail and restaurant businesses
-                </strong>
-                . Simplify your sales, track inventory, and manage operations
-                all in one platform.
-              </p>
-
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-6 sm:mb-10 px-2 sm:px-0">
-                Register now and we'll notify you once the full version
-                launches!
-              </p>
-
-              <button
-                onClick={() => setShowModal(true)}
-                className="relative px-6 sm:px-8 py-3 sm:py-4 bg-[#FF7D00] text-white rounded-xl font-bold text-base sm:text-lg shadow-lg overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:scale-105 animate-fadeInUp w-full sm:w-auto"
-              >
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                  Try FREE Demo
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 -translate-x-full group-hover:translate-x-full"></span>
-              </button>
-
-              <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-6 text-xs sm:text-sm text-gray-600">
-                <div className="flex items-center gap-2">
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="whitespace-nowrap">No Credit Card Required</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="whitespace-nowrap">Cloud-Based System</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="whitespace-nowrap">Easy Setup</span>
+              <div>
+                <div className="text-[8px] sm:text-[10px] md:text-xs text-gray-500 whitespace-nowrap">Active Clients</div>
+                <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900 whitespace-nowrap">
+                  1,000+
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="relative animate-fadeInRight order-1 lg:order-2">
-              <div className="relative">
-                <div className="absolute -top-10 -right-10 w-40 sm:w-60 md:w-72 h-40 sm:h-60 md:h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-                <div className="absolute -bottom-10 -left-10 w-40 sm:w-60 md:w-72 h-40 sm:h-60 md:h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-
-                <div className="p-4 sm:p-6 md:p-8">
-                  <div className="relative z-10 transform hover:scale-105 transition-transform duration-500 max-w-4xl mx-auto">
-                    <div className="relative w-full h-auto">
-                      <img
-                        src="/images/h-removebg-preview.png"
-                        alt="TinkerPro Cloud POS System"
-                        className="w-full h-auto drop-shadow-2xl animate-slideshow"
-                      />
-
-                      <img
-                        src="/images/tinkerpro.png"
-                        alt="TinkerPro Cloud POS System"
-                        className="w-full h-auto drop-shadow-2xl absolute top-0 left-0 animate-slideshow-delayed"
-                      />
-                    </div>
-                  </div>
+          <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 -right-1 sm:-right-2 md:-right-5 z-20 bg-white rounded-md sm:rounded-lg md:rounded-xl shadow-xl p-1.5 sm:p-2 md:p-4 animate-float animation-delay-1000">
+            <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[#FF7D00] rounded-full flex items-center justify-center flex-shrink-0">
+                <BadgeCheck className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 text-white" />
+              </div>
+              <div>
+                <div className="text-[8px] sm:text-[10px] md:text-xs text-gray-500 whitespace-nowrap">
+                  BIR Accredited
                 </div>
-
-                <div className="absolute top-4 sm:top-10 -left-2 sm:-left-5 z-20 bg-white rounded-lg sm:rounded-xl shadow-xl p-2 sm:p-4 animate-float">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Users className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-[10px] sm:text-xs text-gray-500 whitespace-nowrap">Active Clients</div>
-                      <div className="text-sm sm:text-lg font-bold text-gray-900 whitespace-nowrap">
-                        1,000+
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-16 sm:bottom-20 -right-2 sm:-right-5 z-20 bg-white rounded-lg sm:rounded-xl shadow-xl p-2 sm:p-4 animate-float animation-delay-1000">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#FF7D00] rounded-full flex items-center justify-center flex-shrink-0">
-                      <BadgeCheck className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-[10px] sm:text-xs text-gray-500 whitespace-nowrap">
-                        BIR Accredited
-                      </div>
-                      <div className="text-sm sm:text-lg font-bold text-gray-900 whitespace-nowrap">
-                        Certified
-                      </div>
-                    </div>
-                  </div>
+                <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900 whitespace-nowrap">
+                  Certified
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
       <Modal showModal={showModal} setShowModal={setShowModal} />
 
-      <style jsx>{`
-        @keyframes slideshow {
-          0% {
-            opacity: 1;
-          }
-          40% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0;
-          }
-          90% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
+      {/* Contact Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto animate-slideDown">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+            >
+              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
 
-        @keyframes slideshowDelayed {
-          0% {
-            opacity: 0;
-          }
-          40% {
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
+            {/* Contact Form Content */}
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+                {/* Left Image */}
+                <div className="relative hidden lg:block">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-200/30 to-orange-300/30 rounded-3xl blur-2xl"></div>
+                  <img
+                    src="/images/m.jpg"
+                    alt="Contact Us"
+                    className="relative rounded-2xl shadow-xl w-full h-auto"
+                  />
+                </div>
 
-        .animate-slideshow {
-          animation: slideshow 10s ease-in-out infinite;
-          transition: opacity 1.5s ease-in-out;
-        }
+                {/* Right Form */}
+                <div className="space-y-4 md:space-y-6">
+                  <div>
+                    <p className="text-[#FF7D00] font-semibold mb-2 text-sm md:text-base">Contact Us</p>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                      Get in Touch! Reach Out to Us Today
+                    </h2>
+                  </div>
 
-        .animate-slideshow-delayed {
-          animation: slideshowDelayed 10s ease-in-out infinite;
-          transition: opacity 1.5s ease-in-out;
-        }
+                  <form className="space-y-3 md:space-y-4" onSubmit={(e) => { e.preventDefault(); /* Handle form submission */ }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                      <input
+                        type="text"
+                        placeholder="Full Name*"
+                        className="px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-300 text-sm md:text-base"
+                        required
+                      />
+                      <input
+                        type="email"
+                        placeholder="Email*"
+                        className="px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-300 text-sm md:text-base"
+                        required
+                      />
+                    </div>
 
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                      <input
+                        type="tel"
+                        placeholder="Mobile*"
+                        className="px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-300 text-sm md:text-base"
+                        required
+                      />
+                      <input
+                        type="text"
+                        placeholder="Subject*"
+                        className="px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-300 text-sm md:text-base"
+                        required
+                      />
+                    </div>
 
-        @keyframes fadeInRight {
-          from {
-            opacity: 0;
-            transform: translateX(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
+                    <textarea
+                      rows={4}
+                      placeholder="Write Project Details*"
+                      className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none resize-none transition-all duration-300 text-sm md:text-base"
+                      required
+                    ></textarea>
 
-        @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
+                    <button
+                      type="submit"
+                      className="px-6 md:px-8 py-2.5 md:py-3 bg-[#FF7D00] text-white rounded-lg hover:bg-orange-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold w-full sm:w-auto text-sm md:text-base"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeSlideIn {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes spin-in {
-          from {
-            transform: rotate(-90deg);
-            opacity: 0;
-          }
-          to {
-            transform: rotate(0deg);
-            opacity: 1;
-          }
-        }
-
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        @keyframes blob {
-          0%,
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-        }
-
-        .animate-fadeInDown {
-          animation: fadeInDown 0.6s ease-out backwards;
-        }
-
-        .animate-fadeInRight {
-          animation: fadeInRight 0.8s ease-out;
-        }
-
-        .animate-fadeInLeft {
-          animation: fadeInLeft 0.8s ease-out;
-        }
-
-        .animate-fadeInUp {
-          animation: fadeInUp 0.6s ease-out 0.3s backwards;
-        }
-
-        .animate-spin-in {
-          animation: spin-in 0.3s ease-out;
-        }
-
-        .animate-fade-in {
-          animation: fade-in 0.3s ease-out;
-        }
-
-        .animate-slide-down {
-          animation: fadeSlideIn 0.3s ease-out;
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        .animation-delay-1000 {
-          animation-delay: 1s;
-        }
-
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-      `}</style>
     </div>
+
+    <style dangerouslySetInnerHTML={{__html: `
+        @keyframes slideDown {
+        from {
+          transform: translateY(-100px);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .animate-slideDown {
+        animation: slideDown 0.5s ease-out forwards;
+      }
+
+      @keyframes slideshow {
+        0% {
+          opacity: 1;
+        }
+        40% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        90% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideshowDelayed {
+        0% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .animate-slideshow {
+        animation: slideshow 10s ease-in-out infinite;
+        transition: opacity 1.5s ease-in-out;
+      }
+
+      .animate-slideshow-delayed {
+        animation: slideshowDelayed 10s ease-in-out infinite;
+        transition: opacity 1.5s ease-in-out;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeSlideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes spin-in {
+        from {
+          transform: rotate(-90deg);
+          opacity: 0;
+        }
+        to {
+          transform: rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+
+      .animate-fadeInDown {
+        animation: fadeInDown 0.6s ease-out backwards;
+      }
+
+      .animate-fadeInRight {
+        animation: fadeInRight 0.8s ease-out;
+      }
+
+      .animate-fadeInLeft {
+        animation: fadeInLeft 0.8s ease-out;
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease-out 0.3s backwards;
+      }
+
+      .animate-spin-in {
+        animation: spin-in 0.3s ease-out;
+      }
+
+      .animate-fade-in {
+        animation: fade-in 0.3s ease-out;
+      }
+
+      .animate-slide-down {
+        animation: fadeSlideIn 0.3s ease-out;
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .animation-delay-1000 {
+        animation-delay: 1s;
+      }
+
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+      `}} /> 
+
+    </>
+
   );
 }

@@ -1,6 +1,6 @@
 import { Check, X } from "lucide-react";
 import React, { useState } from "react";
-import Modal from "./modal";
+import Modal from "./get-demo-modal";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);

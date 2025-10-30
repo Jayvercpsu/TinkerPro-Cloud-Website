@@ -240,37 +240,38 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
               {/* SELECT DEMO STEP */}
               {step === "selectDemo" && (
                 <div className={`text-black ${isAnimating ? 'animate-slideOutLeft' : 'animate-slideInRight'}`}>
-                  <div className="text-center mb-6 sm:mb-8">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 text-[#FF7D00]">
+                  <div className="text-center mb-4 sm:mb-6 md:mb-8 px-4">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 sm:mb-3 text-[#FF7D00]">
                       Choose Your Demo
                     </h2>
-                    <p className="text-sm sm:text-base text-gray-700">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-700">
                       Select the demo that matches your business type
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 px-4">
                     {/* Retail Demo */}
                     <button
                       onClick={() => handleDemoSelect("retail")}
-                      className="group relative bg-white/80 backdrop-blur-sm border-2 border-gray-300 rounded-2xl overflow-hidden hover:border-[#FF7D00] transition-all duration-300 hover:shadow-2xl transform hover:scale-105"
+                      className="group relative bg-white/80 backdrop-blur-sm border-2 border-gray-300 rounded-xl sm:rounded-2xl overflow-hidden hover:border-[#FF7D00] transition-all duration-300 hover:shadow-2xl active:scale-95 sm:hover:scale-105 touch-manipulation"
                     >
                       <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                         <img
                           src="/images/retail.png"
                           alt="Retail Demo"
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
                         />
                       </div>
-                      <div className="p-4 sm:p-6">
-                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                      <div className="p-3 sm:p-4 md:p-6">
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2">
                           Retail Demo
                         </h3>
-                        <p className="text-xs sm:text-sm text-gray-600 mb-3">
+                        <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
                           Wholesale and Retail
                         </p> 
-                        <div className="px-3 py-2 bg-[#FF7D00] text-white rounded-lg font-semibold group-hover:bg-orange-600 transition-colors text-sm">
-                         Select
+                        <div className="inline-block px-4 py-2 bg-[#FF7D00] text-white rounded-lg font-semibold group-hover:bg-orange-600 group-active:bg-orange-700 transition-colors text-xs sm:text-sm">
+                          Select
                         </div>
                       </div>
                     </button>
@@ -278,30 +279,31 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
                     {/* Food & Beverage Demo */}
                     <button
                       onClick={() => handleDemoSelect("resto")}
-                      className="group relative bg-white/80 backdrop-blur-sm border-2 border-gray-300 rounded-2xl overflow-hidden hover:border-[#FF7D00] transition-all duration-300 hover:shadow-2xl transform hover:scale-105"
+                      className="group relative bg-white/80 backdrop-blur-sm border-2 border-gray-300 rounded-xl sm:rounded-2xl overflow-hidden hover:border-[#FF7D00] transition-all duration-300 hover:shadow-2xl active:scale-95 sm:hover:scale-105 touch-manipulation"
                     >
                       <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                         <img
                           src="/images/resto.png"
                           alt="Food and Beverage Demo"
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
                         />
                       </div>
-                      <div className="p-4 sm:p-6">
-                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                      <div className="p-3 sm:p-4 md:p-6">
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2">
                           Food and Beverage
                         </h3>
-                        <p className="text-xs sm:text-sm text-gray-600 mb-3">
+                        <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
                           Restaurant and Cafe
                         </p> 
-                        <div className="px-3 py-2 bg-[#FF7D00] text-white rounded-lg font-semibold group-hover:bg-orange-600 transition-colors text-sm">
-                         Select
+                        <div className="inline-block px-4 py-2 bg-[#FF7D00] text-white rounded-lg font-semibold group-hover:bg-orange-600 group-active:bg-orange-700 transition-colors text-xs sm:text-sm">
+                          Select
                         </div>
                       </div>
                     </button>
                   </div>
 
-                  <p className="text-center text-xs sm:text-sm text-gray-600 mt-6">
+                  <p className="text-center text-xs sm:text-sm text-gray-600 mt-4 sm:mt-6 px-4">
                     Note: For a better demo experience, please use a high-resolution screen.
                   </p>
                 </div>
@@ -328,7 +330,7 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
 
               {/* SUCCESS STEP */}
               {step === "success" && (
-                <div className={`text-center py-8 sm:py-12 text-black ${isAnimating ? 'animate-slideOutLeft' : 'animate-scaleIn'}`}>
+                <div className={`text-center py-8 sm:py-12 text-black select-none ${isAnimating ? 'animate-slideOutLeft' : 'animate-scaleIn'}`}>
                   <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-successPop">
                     <Check className="w-8 h-8 sm:w-12 sm:h-12 text-white animate-checkmark" />
                   </div>

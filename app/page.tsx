@@ -10,7 +10,7 @@ import Clients from "./new-includes/clients-feedback";
 import Pricing from "./new-includes/pricing";
 import Features from "./new-includes/features-section";
 import Demo from "./new-includes/demo-section";
-import Modal from "./new-includes/modal";
+import Modal from "./new-includes/get-demo-modal";
 
 export default function CloudPOSLanding() {
   const [showModal, setShowModal] = useState(false); 
