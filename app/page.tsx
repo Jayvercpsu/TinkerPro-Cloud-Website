@@ -1,16 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from "react"; 
-import Header from "./new-includes/header-section";
-import Home from "./new-includes/home-section";
-import Footer from "./new-includes/footer-section";
-import Contact from "./new-includes/contact-section";
-import Faq from "./new-includes/faq-section";
-import Clients from "./new-includes/clients-feedback";
-import Pricing from "./new-includes/pricing";
-import Features from "./new-includes/features-section";
-import Demo from "./new-includes/demo-section";
-import Modal from "./new-includes/get-demo-modal";
+import Header from "./include-sections/header-section";
+import Home from "./include-sections/home-section";
+import Footer from "./include-sections/footer-section";
+import Contact from "./include-sections/contact-section";
+import Faq from "./include-sections/faq-section"; 
+import Pricing from "./include-sections/pricing";
+import Features from "./include-sections/features-section";
+import Demo from "./include-sections/demo-section";
+import Modal from "./include-sections/get-demo-modal"; 
+import OurClients from "./include-sections/clients-section";
+import ClientsFeedback from "./include-sections/clients-feedback";
 
 export default function CloudPOSLanding() {
   const [showModal, setShowModal] = useState(false); 
@@ -52,8 +53,9 @@ export default function CloudPOSLanding() {
       <main className="pt-20">
         <Home />
         <Features />
+        <OurClients/>
         <Pricing />
-        <Clients />
+        <ClientsFeedback />
         <Demo />
         <Faq />
         <Contact />

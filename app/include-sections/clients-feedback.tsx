@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import React from "react";
 
-export default function Clients() {
+export default function ClientsFeedback() {
   return (
     <section id="testimonial" className="py-20 bg-[#f3f9fd]">
       <div className="container mx-auto px-4">

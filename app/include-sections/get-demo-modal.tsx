@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X } from "lucide-react";
+import { Check, CheckCircle, X } from "lucide-react";
 import React, { useState } from "react";
 
 interface ModalProps {
@@ -9,30 +9,207 @@ interface ModalProps {
 }
 
 const allCountries = [
-  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
-  "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
-  "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
-  "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica",
-  "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt",
-  "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
-  "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana",
-  "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel",
-  "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan",
-  "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar",
-  "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia",
-  "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal",
-  "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan",
-  "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar",
-  "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia",
-  "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa",
-  "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan",
-  "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan",
-  "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City",
-  "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Brazil",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cabo Verde",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Colombia",
+  "Comoros",
+  "Congo",
+  "Costa Rica",
+  "Croatia",
+  "Cuba",
+  "Cyprus",
+  "Czech Republic",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Eswatini",
+  "Ethiopia",
+  "Fiji",
+  "Finland",
+  "France",
+  "Gabon",
+  "Gambia",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Greece",
+  "Grenada",
+  "Guatemala",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Honduras",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Israel",
+  "Italy",
+  "Jamaica",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Kosovo",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Mauritania",
+  "Mauritius",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "North Korea",
+  "North Macedonia",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestine",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Poland",
+  "Portugal",
+  "Qatar",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Korea",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "Timor-Leste",
+  "Togo",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City",
+  "Venezuela",
+  "Vietnam",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe",
 ];
 
 export default function Modal({ showModal, setShowModal }: ModalProps) {
-  const [step, setStep] = useState<"form" | "selectDemo" | "loading" | "success">("form");
+  const [step, setStep] = useState<
+    "form" | "selectDemo" | "loading" | "success"
+  >("form");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,11 +222,16 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.businessType || !formData.country) {
+
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.businessType ||
+      !formData.country
+    ) {
       return;
     }
-    
+
     setIsSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsSubmitting(false);
@@ -65,7 +247,7 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
     await new Promise((resolve) => setTimeout(resolve, 400));
     setStep("loading");
     setIsAnimating(false);
-    
+
     await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsAnimating(true);
     await new Promise((resolve) => setTimeout(resolve, 400));
@@ -120,7 +302,11 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
 
               {/* FORM STEP */}
               {step === "form" && (
-                <div className={`transition-all duration-700 ease-in-out text-black ${isAnimating ? 'animate-slideOutTop' : 'animate-slideInDown'}`}>
+                <div
+                  className={`transition-all duration-700 ease-in-out text-black ${
+                    isAnimating ? "animate-slideOutTop" : "animate-slideInDown"
+                  }`}
+                >
                   <div className="text-center mb-6 sm:mb-8">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 text-[#FF7D00]">
                       Get Early Access to
@@ -239,7 +425,13 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
 
               {/* SELECT DEMO STEP */}
               {step === "selectDemo" && (
-                <div className={`text-black ${isAnimating ? 'animate-slideOutLeft' : 'animate-slideInRight'}`}>
+                <div
+                  className={`text-black ${
+                    isAnimating
+                      ? "animate-slideOutLeft"
+                      : "animate-slideInRight"
+                  }`}
+                >
                   <div className="text-center mb-4 sm:mb-6 md:mb-8 px-4">
                     <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 sm:mb-3 text-[#FF7D00]">
                       Choose Your Demo
@@ -269,7 +461,7 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
                         </h3>
                         <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
                           Wholesale and Retail
-                        </p> 
+                        </p>
                         <div className="inline-block px-4 py-2 bg-[#FF7D00] text-white rounded-lg font-semibold group-hover:bg-orange-600 group-active:bg-orange-700 transition-colors text-xs sm:text-sm">
                           Select
                         </div>
@@ -295,7 +487,7 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
                         </h3>
                         <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">
                           Restaurant and Cafe
-                        </p> 
+                        </p>
                         <div className="inline-block px-4 py-2 bg-[#FF7D00] text-white rounded-lg font-semibold group-hover:bg-orange-600 group-active:bg-orange-700 transition-colors text-xs sm:text-sm">
                           Select
                         </div>
@@ -304,7 +496,8 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
                   </div>
 
                   <p className="text-center text-xs sm:text-sm text-gray-600 mt-4 sm:mt-6 px-4">
-                    Note: For a better demo experience, please use a high-resolution screen.
+                    Note: For a better demo experience, please use a
+                    high-resolution screen.
                   </p>
                 </div>
               )}
@@ -330,32 +523,51 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
 
               {/* SUCCESS STEP */}
               {step === "success" && (
-                <div className={`text-center py-8 sm:py-12 text-black select-none ${isAnimating ? 'animate-slideOutLeft' : 'animate-scaleIn'}`}>
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-successPop">
-                    <Check className="w-8 h-8 sm:w-12 sm:h-12 text-white animate-checkmark" />
+                <div
+                  className={`relative text-center py-10 sm:py-16 px-4 text-black select-none overflow-hidden ${
+                    isAnimating ? "animate-slideOutLeft" : "animate-scaleIn"
+                  }`}
+                > 
+                  <div className="absolute bg-gradient-to-br from-green-50 via-white to-orange-50 opacity-70 blur-3xl animate-pulse"></div>
+ 
+                  <div className="relative w-24 h-24 bg-gradient-to-br from-green-500 to-green-400 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-bounce-slow">
+                    <div className="absolute inset-0 rounded-full bg-green-300 opacity-50 blur-md animate-ping"></div>
+                    <CheckCircle className="w-12 h-12 text-white animate-checkmark z-10" />
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 animate-fadeInUp">
-                    Thank You for Subscribing!
+ 
+                  <h3 className="text-3xl sm:text-4xl font-extrabold mb-4 text-gray-900 animate-fadeInUp">
+                    Subscription Successful
                   </h3>
-                  <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 px-2 animate-fadeInUp" style={{ animationDelay: "0.1s" }}>
-                    We're finalizing the TinkerPro Cloud POS platform.
+ 
+                  <p
+                    className="max-w-md mx-auto text-base sm:text-lg text-gray-700 leading-relaxed mb-8 animate-fadeInUp"
+                    style={{ animationDelay: "0.1s" }}
+                  >
+                    Thank you for subscribing to <strong>TinkerPro Cloud POS</strong>!  
                     <br />
-                    <strong>
-                      You'll receive an email once we officially launch.
-                    </strong>
+                    We appreciate your interest and patience as we prepare for our official launch.  
                     <br />
-                    You're now part of our priority launch list!
+                    <span className="text-[#FF7D00] font-semibold">
+                      You’ll receive an email notification once the POS system is officially live.
+                    </span>
                   </p>
+
                   <button
                     type="button"
                     onClick={handleClose}
-                    className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#FF7D00] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base animate-fadeInUp"
+                    className="px-6 sm:px-8 py-3 sm:py-3.5 bg-gradient-to-r from-[#FF7D00] to-orange-500 text-white rounded-lg font-semibold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm sm:text-base animate-fadeInUp"
                     style={{ animationDelay: "0.2s" }}
                   >
                     Close
                   </button>
+ 
+                  <div className="absolute top-10 left-1/4 w-3 h-3 bg-orange-300 rounded-full opacity-60 animate-ping-slow"></div>
+                  <div className="absolute bottom-12 right-1/3 w-4 h-4 bg-green-300 rounded-full opacity-60 animate-ping-slow delay-200"></div>
+                  <div className="absolute top-1/2 right-10 w-2 h-2 bg-yellow-300 rounded-full opacity-70 animate-pulse-slow delay-300"></div>
+
                 </div>
               )}
+
             </div>
           </div>
         </div>
@@ -502,6 +714,36 @@ export default function Modal({ showModal, setShowModal }: ModalProps) {
 
         .animate-spin-slow {
           animation: spinSlow 1.5s linear infinite;
+        }
+
+        @keyframes bounce-slow {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 2.5s ease-in-out infinite;
+        }
+        @keyframes ping-slow {
+          0% {
+            transform: scale(0.9);
+            opacity: 0.8;
+          }
+          75%,
+          100% {
+            transform: scale(1.4);
+            opacity: 0;
+          }
+        }
+        .animate-ping-slow {
+          animation: ping-slow 2.5s linear infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse 3s ease-in-out infinite;
         }
       `}</style>
     </>
