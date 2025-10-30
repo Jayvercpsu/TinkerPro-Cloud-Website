@@ -101,7 +101,7 @@ export default function OurClients() {
         .animate-marquee {
           display: flex;
           width: max-content;
-          animation: marquee 20s linear infinite;
+          animation: marquee 40s linear infinite;
         }
       `}</style>
     </>
