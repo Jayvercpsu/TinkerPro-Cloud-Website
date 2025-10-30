@@ -67,15 +67,27 @@ export default function Home() {
               <img
                 src="/images/h-removebg-preview.png"
                 alt="Cloud POS System"
-                className="relative transform hover:scale-105 transition-all duration-500"
-                style={{
-                  animation: "floatGlow 4s ease-in-out infinite",
-                }}
+                className="relative transform hover:scale-105 transition-all duration-500 animate-float-slow"
               />
             </div>
           </div>
         </div>
       </div>
+      
+       <style dangerouslySetInnerHTML={{__html: `
+          @keyframes float-slow {
+            0%, 100% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+          }
+
+          .animate-float-slow {
+            animation: float-slow 3s ease-in-out infinite;
+          }
+        `}} />
       
   <Modal showModal={showModal} setShowModal={setShowModal} />
     </section>

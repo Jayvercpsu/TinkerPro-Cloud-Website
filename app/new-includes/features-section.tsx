@@ -156,22 +156,34 @@ export default function Features() {
             }
           `}</style>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div
-              className="relative wow fadeInLeft"
-              data-wow-duration="1s"
-              data-wow-delay="0.2s"
-            >
-              <div className="absolute inset-0 rounded-3xl blur-2xl"></div>
-              <img
-                src="/images/tinkerpro.png"
-                alt="Cloud POS"
-                className="relative transform hover:scale-105 transition-all duration-500"
-                style={{
-                  animation: "floatGlow 4s ease-in-out infinite",
-                }}
-              />
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"> 
+  <div
+    className="relative wow fadeInLeft"
+    data-wow-duration="1s"
+    data-wow-delay="0.2s"
+  >
+    <div className="absolute inset-0 rounded-3xl blur-2xl"></div>
+    <img
+      src="/images/tinkerpro.png"
+      alt="Cloud POS"
+      className="relative transform hover:scale-105 transition-all duration-500 animate-float-slow"
+    />
+  </div>
+
+  <style dangerouslySetInnerHTML={{__html: `
+    @keyframes float-slow {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-float-slow {
+      animation: float-slow 3s ease-in-out infinite;
+    }
+  `}} />
             <div
               className="space-y-8 wow fadeInRight"
               data-wow-duration="1s"
@@ -375,63 +387,78 @@ export default function Features() {
 
 
 
-      <section className="py-20 bg-[#f3f9fd]">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div
-              className="space-y-8 wow fadeInLeft"
-              data-wow-duration="1s"
-              data-wow-delay="0.2s"
-            >
-              <div>
-                <p className="text-[#FF7D00] font-semibold mb-2">
-                  Who Can Use TinkerPro Cloud POS
-                </p>
-                <h2 className="text-3xl font-bold text-gray-900">
-                  Our Cloud Software Capable for Wide Range of Business and
-                  Industries
-                </h2>
-              </div>
-              <ul className="space-y-3">
-                {[
-                  "Retail Stores",
-                  "Grocery Stores",
-                  "Restaurants and Cafes",
-                  "Convenience Stores",
-                  "eCommerce Businesses",
-                  "Hospitality and Hotels",
-                  "And Many More..",
-                ].map((item, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-center space-x-3 wow fadeInLeft"
-                    data-wow-duration="1s"
-                    data-wow-delay={`${0.2 + idx * 0.1}s`}
-                  >
-                    <div className="w-6 h-6 bg-[#FF7D00] rounded-full flex items-center justify-center flex-shrink-0 transform hover:scale-110 transition-all duration-300">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-gray-700 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div
-              className="relative wow fadeInRight"
-              data-wow-duration="1s"
-              data-wow-delay="0.3s"
-            >
-              <div className="absolute inset-0 bg-gradient-to-l from-orange-200/30 to-orange-300/30 rounded-3xl blur-2xl"></div>
-              <img
-                src="/images/1.jpg"
-                alt="Business Types"
-                className="relative rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-500"
-              />
-            </div>
-          </div>
+<section className="py-20 bg-[#f3f9fd]">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div
+        className="space-y-8 wow fadeInLeft"
+        data-wow-duration="1s"
+        data-wow-delay="0.2s"
+      >
+        <div>
+          <p className="text-[#FF7D00] font-semibold mb-2">
+            Who Can Use TinkerPro Cloud POS
+          </p>
+          <h2 className="text-3xl font-bold text-gray-900">
+            Our Cloud Software Capable for Wide Range of Business and
+            Industries
+          </h2>
         </div>
-      </section>
+        <ul className="space-y-3">
+          {[
+            "Retail Stores",
+            "Grocery Stores",
+            "Restaurants and Cafes",
+            "Convenience Stores",
+            "eCommerce Businesses",
+            "Hospitality and Hotels",
+            "And Many More..",
+          ].map((item, idx) => (
+            <li
+              key={idx}
+              className="flex items-center space-x-3 wow fadeInLeft"
+              data-wow-duration="1s"
+              data-wow-delay={`${0.2 + idx * 0.1}s`}
+            >
+              <div className="w-6 h-6 bg-[#FF7D00] rounded-full flex items-center justify-center flex-shrink-0 transform hover:scale-110 transition-all duration-300">
+                <Check className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-gray-700 font-medium">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div
+        className="relative wow fadeInRight"
+        data-wow-duration="1s"
+        data-wow-delay="0.3s"
+      >
+        <div className="absolute inset-0 rounded-3xl blur-2xl"></div>
+        <img
+          src="/images/new.png"
+          alt="Business Types"
+          className="relative transform hover:scale-105 transition-all duration-500 animate-float-slow"
+        />
+      </div>
+    </div>
+  </div>
+
+  <style jsx>{`
+    @keyframes float-slow {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-float-slow {
+      animation: float-slow 3s ease-in-out infinite;
+    }
+  `}</style>
+</section>
     </>
   );
 }

@@ -51,13 +51,7 @@ export default function Contact() {
               </div>
 
               {/* Mobile and Subject */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="tel"
-                  placeholder="Mobile*"
-                  className="px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:border-[#FF7D00] focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-300"
-                  required
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> 
                 <input
                   type="text"
                   placeholder="Subject*"
